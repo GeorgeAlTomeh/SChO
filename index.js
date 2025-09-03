@@ -284,7 +284,7 @@ bot.action('inorganic_chemistry', (ctx) => {
   ]));
 });
 
-bot.action('nrg1', async (ctx) => {
+bot.action('nri1', async (ctx) => {
     try {
         const filePath = path.join(__dirname, 'books/4_5891131096296331592.pdf');
         
