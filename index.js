@@ -23,19 +23,13 @@ const bot = new Telegraf(BOT_TOKEN);
 
 bot.start((ctx) => {
   const welcomeMessage = 
-  `     hello in the SCho bot\n
+  `hello in the SCho bot\n
    that provides the books and files\n
    for the national olympiad in chemistry\n
-   \n
    /start : to start\n
-   \n
-   \n
-   \n
    thanks for the developer George Tomeh\n
-                @GeorgeTomeh\n
-   \n
-   \n
-                Good Luck !\n`;
+   @GeorgeTomeh\n
+   Good Luck !\n`;
 
   ctx.replyWithMarkdown(welcomeMessage, Markup.keyboard([
     ['International', 'National'],
@@ -149,7 +143,7 @@ bot.action('general_chemistry', (ctx) => {
   ctx.editMessageText('Choose a book:', Markup.inlineKeyboard([
     [Markup.button.callback('هندسية ', 'nrg1')],
     [Markup.button.callback('غازات', 'nrg2')],
-    [Markup.button.callback('...', 'nrg3')],
+    [Markup.button.callback('الطريق الأوضح في الكيمياء العامة', 'nrg3')],
     [Markup.button.callback('رجوع', 'regions_books')]
   ]));
 });
@@ -285,7 +279,7 @@ bot.action('nro1', async (ctx) => {
 
 bot.action('inorganic_chemistry', (ctx) => {
   ctx.editMessageText('Choose a book:', Markup.inlineKeyboard([
-    [Markup.button.callback('...', 'nri1')],
+    [Markup.button.callback('مبادئ في الكيمياء اللاعضوية', 'nri1')],
     [Markup.button.callback('رجوع', 'regions_books')]
   ]));
 });
@@ -365,18 +359,15 @@ bot.hears('International', (ctx) => {
 
 bot.hears('Info', (ctx) => {
   const infoMessage = 
-  `this is the one amd the offic SChO bot\n
+  `this is the one and the offical SChO bot\n
    that provides the books and files\n
    for the national olympiad in chemistry\n
    \n
    the books and files are made by the coachs\n
    \n
-   \n
-   \n
    thanks for the developer George Tomeh\n
                 @GeorgeTomeh\n
-   \n
-   \n
+                \n
                 Good Luck !\n`;
 
   ctx.reply(infoMessage);
