@@ -201,7 +201,26 @@ bot.action('nrg2', async (ctx) => {
 });
 
 bot.action('nrg3', async (ctx) => {
-  ctx.reply('Soon ...');
+    try {
+        const filePath = path.join(__dirname, 'books/4_5888924436588928564.pdf');
+        
+        if (!fs.existsSync(filePath)) {
+            return ctx.reply('File not found!');
+        }
+        
+        await ctx.replyWithDocument({
+            source: filePath
+        }, {
+            caption: 'Here is your PDF file 📄'
+        });
+        
+        await ctx.answerCbQuery();
+
+    } catch (error) {
+        console.error('Error sending file:', error);
+        await ctx.reply('Sorry, there was an error sending the file.');
+        await ctx.answerCbQuery();
+    }
 });
 
 bot.action('analytical_chemistry', (ctx) => {
@@ -272,13 +291,31 @@ bot.action('inorganic_chemistry', (ctx) => {
 });
 
 bot.action('nrg1', async (ctx) => {
-  ctx.reply('Soon ...');
+    try {
+        const filePath = path.join(__dirname, 'books/4_5891131096296331592.pdf');
+        
+        if (!fs.existsSync(filePath)) {
+            return ctx.reply('File not found!');
+        }
+        
+        await ctx.replyWithDocument({
+            source: filePath
+        }, {
+            caption: 'Here is your PDF file 📄'
+        });
+        
+        await ctx.answerCbQuery();
+
+    } catch (error) {
+        console.error('Error sending file:', error);
+        await ctx.reply('Sorry, there was an error sending the file.');
+        await ctx.answerCbQuery();
+    }
 });
 
 bot.action('regions_exams', (ctx) => {
   ctx.editMessageText('Choose exams file:', Markup.inlineKeyboard([
     [Markup.button.callback('دورات سابقة طبعة اولى', 'former_exams')],
-    [Markup.button.callback('رجوع', 'regions_books')],
     [Markup.button.callback('رجوع', 'regions')]
   ]));
 });
