@@ -47,7 +47,7 @@ bot.action('regions', (ctx) => {
   ctx.editMessageText('Choose:', Markup.inlineKeyboard([
     [Markup.button.callback('books', 'regions_books')],
     [Markup.button.callback('exams', 'regions_exams')],
-    [Markup.button.callback('close', 'close')]
+    [Markup.button.callback('back', 'NationalAction')]
   ]));
 });
 
@@ -352,6 +352,15 @@ bot.action('national', (ctx) => {
 
 bot.hears('National', (ctx) => {
   ctx.reply('Choose: ', Markup.inlineKeyboard([
+    [Markup.button.callback('️Regions', 'regions')],
+    [Markup.button.callback('Governates', 'governates')],
+    [Markup.button.callback('National', 'national')],
+    [Markup.button.callback('close', 'close')]
+  ]));
+});
+
+bot.action('NationalAction', (ctx) => {
+  ctx.editMessageText('Choose: ', Markup.inlineKeyboard([
     [Markup.button.callback('️Regions', 'regions')],
     [Markup.button.callback('Governates', 'governates')],
     [Markup.button.callback('National', 'national')],
