@@ -52,7 +52,7 @@ bot.action('regions', (ctx) => {
 });
 
 bot.action('close', (ctx) => {
-  ctx.reply('done')
+  ctx.editMessageText('done')
 })
 
 bot.action('regions_books', (ctx) => {
@@ -354,7 +354,8 @@ bot.hears('National', (ctx) => {
   ctx.reply('Choose: ', Markup.inlineKeyboard([
     [Markup.button.callback('️Regions', 'regions')],
     [Markup.button.callback('Governates', 'governates')],
-    [Markup.button.callback('National', 'national')]
+    [Markup.button.callback('National', 'national')],
+    [Markup.button.callback('close', 'close')]
   ]));
 });
 
