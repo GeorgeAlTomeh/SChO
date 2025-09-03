@@ -46,9 +46,14 @@ bot.help((ctx) => {
 bot.action('regions', (ctx) => {
   ctx.editMessageText('Choose:', Markup.inlineKeyboard([
     [Markup.button.callback('books', 'regions_books')],
-    [Markup.button.callback('exams', 'regions_exams')]
+    [Markup.button.callback('exams', 'regions_exams')],
+    [Markup.button.callback('close', 'close')]
   ]));
 });
+
+bot.action('close', (ctx) => {
+  ctx.reply('done')
+})
 
 bot.action('regions_books', (ctx) => {
   ctx.editMessageText('Choose a category:', Markup.inlineKeyboard([
@@ -57,7 +62,7 @@ bot.action('regions_books', (ctx) => {
     [Markup.button.callback('Analytical Chemistry', 'analytical_chemistry')],
     [Markup.button.callback('Organic Chemistry', 'organic_chemistry')],
     [Markup.button.callback('Inorganic Chemistry', 'inorganic_chemistry')],
-    [Markup.button.callback('رجوع', 'regions')]
+    [Markup.button.callback('back', 'regions')]
   ]));
 });
 
@@ -66,7 +71,7 @@ bot.action('physical_chemistry', (ctx) => {
     [Markup.button.callback('أكسدة و إرجاع', 'nrp1')],
     [Markup.button.callback('كهروكيميائية', 'nrp2')],
     [Markup.button.callback('ترموديناميك', 'nrp3')],
-    [Markup.button.callback('رجوع', 'regions_books')]
+    [Markup.button.callback('back', 'regions_books')]
   ]));
 });
 
@@ -144,7 +149,7 @@ bot.action('general_chemistry', (ctx) => {
     [Markup.button.callback('هندسية ', 'nrg1')],
     [Markup.button.callback('غازات', 'nrg2')],
     [Markup.button.callback('الطريق الأوضح في الكيمياء العامة', 'nrg3')],
-    [Markup.button.callback('رجوع', 'regions_books')]
+    [Markup.button.callback('back', 'regions_books')]
   ]));
 });
 
@@ -220,7 +225,7 @@ bot.action('nrg3', async (ctx) => {
 bot.action('analytical_chemistry', (ctx) => {
   ctx.editMessageText('Choose a book:', Markup.inlineKeyboard([
     [Markup.button.callback('تحليلية', 'nra1')],
-    [Markup.button.callback('رجوع', 'regions_books')]
+    [Markup.button.callback('back', 'regions_books')]
   ]));
 });
 
@@ -250,7 +255,7 @@ bot.action('nra1', async (ctx) => {
 bot.action('organic_chemistry', (ctx) => {
   ctx.editMessageText('Choose a book:', Markup.inlineKeyboard([
     [Markup.button.callback('عضوية', 'nro1')],
-    [Markup.button.callback('رجوع', 'regions_books')]
+    [Markup.button.callback('back', 'regions_books')]
   ]));
 });
 
@@ -280,7 +285,7 @@ bot.action('nro1', async (ctx) => {
 bot.action('inorganic_chemistry', (ctx) => {
   ctx.editMessageText('Choose a book:', Markup.inlineKeyboard([
     [Markup.button.callback('مبادئ في الكيمياء اللاعضوية', 'nri1')],
-    [Markup.button.callback('رجوع', 'regions_books')]
+    [Markup.button.callback('back', 'regions_books')]
   ]));
 });
 
@@ -310,7 +315,7 @@ bot.action('nri1', async (ctx) => {
 bot.action('regions_exams', (ctx) => {
   ctx.editMessageText('Choose exams file:', Markup.inlineKeyboard([
     [Markup.button.callback('دورات سابقة طبعة اولى', 'former_exams')],
-    [Markup.button.callback('رجوع', 'regions')]
+    [Markup.button.callback('back', 'regions')]
   ]));
 });
 
