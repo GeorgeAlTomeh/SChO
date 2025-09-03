@@ -362,9 +362,7 @@ bot.hears('Info', (ctx) => {
   `this is the one and the offical SChO bot\n
    that provides the books and files\n
    for the national olympiad in chemistry\n
-   \n
    the books and files are made by the coachs\n
-   \n
    thanks for the developer George Tomeh\n
                 @GeorgeTomeh\n
                 \n
