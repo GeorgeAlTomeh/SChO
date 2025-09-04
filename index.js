@@ -374,10 +374,10 @@ bot.hears('International', (ctx) => {
 
 bot.hears('Info', (ctx) => {
   const infoMessage = 
-  `this is the one and the offical SChO bot\n
+  `this is the one and the SChO bot\n
    that provides the books and files\n
    for the national olympiad in chemistry\n
-   the books and files are made by the coachs\n
+   the books and files are made by the coaches\n
    thanks for the developer George Tomeh\n
                 @GeorgeTomeh\n
                 \n
